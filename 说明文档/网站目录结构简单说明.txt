@@ -1,0 +1,62 @@
+网站目录结构简单说明
+├─src 
+│  ├─com
+│  │  └─xjxy
+│  │      ├─dao     : 2-dao层处理sql
+│  │      ├─model   ：1-实体类
+│  │      ├─service ：3-业务层 处理业务逻辑
+│  │      ├─utils   ：工具类
+│  │      └─web     ：4-WEB层 参数传递和页面跳转
+│  ├─filter：过滤器        
+│  └─test  ：测试类
+└─WebContent  :放置页面和一些前台js文件，css文件，图片等静态文件的地方
+   ├─META-INF
+   ├─Public   ：静态资源路径 包括css文件和js文件和图片以及被包含include的jsp页面
+   │  ├─css   ： css文件
+   │  │  ├─fore  ：网站前台需要的css
+   │  │  ├─patterns ：主题模板图片
+   │  │  └─plugins  ：css插件
+   │  ├─font-awesome ： css图标库
+   │  │  ├─css
+   │  │  └─fonts
+   │  ├─img     ：图片存放路径
+   │  ├─include ：被包含include的jsp页面 
+   │  │  ├─back ：网站后台
+   │  │  │  ├─category
+   │  │  │  └─user
+   │  │  └─fore ：网站前台
+   │  │      ├─comment
+   │  │      ├─index： 主页
+   │  │      ├─messageBoard
+   │  │      ├─news
+   │  │      ├─solution
+   │  │      ├─user
+   │  │      └─xunqin
+   │  ├─install
+   │  │  ├─css
+   │  │  ├─img
+   │  │  └─js
+   │  └─js ：js文件
+   │      ├─demo
+   │      └─plugins ： js插件
+   └─WEB-INF： 网站相关配置文件
+       ├─web.xml : （#重点 网站配置文件，所有后台servlet在这里配置）
+       ├─lib  ：需要的jar包
+       ├─tlds ：自定义标签库
+       └─views ：所有的jsp页面
+           ├─comment
+           ├─messageBoard
+           ├─news
+           ├─solution
+           ├─user
+           └─xunqin
+
+----------实体类说明---------------------------
+Announce：公告
+Comment： 评论
+Link：     网站链接
+News：     新闻
+Solution： 解决放哪
+Xunqin：   寻子寻亲类
+User：     用户
+MessageBoard： 留言板 

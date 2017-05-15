@@ -1,0 +1,25 @@
+﻿
+
+#寻子寻亲 字段查询
+          添加成功字段
+          用户修改这个提交的数据
+
+#个人信息 # 修改密码
+冻结#解冻
+
+MVC
+Model - View JSP - Controller -Servlet
+
+数据库 Mybatis(ORM框架) 数据库框架 # 把数据库对象转化成我的JAVA对象  简化你数据库的操作
+       mysql：数据库名称
+       sql：结构化查询语言 用sql来访问mysql
+       orm框架：数据对象映射 把数据库对象映射成编程语言对象
+
+JSON 用js连拼接html  （AJAX）
+
+BootStrap后台模板
+
+
+访问说明:
+默认路径为 localhost:8080/findchild
+通过 localhost:8080/findchild/admin 来访问后台

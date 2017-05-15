@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xjxy.dao.XunqinMapper">
+  <resultMap id="BaseResultMap" type="com.xjxy.model.Xunqin">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="logname" jdbcType="VARCHAR" property="logname" />
+    <result column="birthplace" jdbcType="VARCHAR" property="birthplace" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="losttime" jdbcType="TIMESTAMP" property="losttime" />
+    <result column="logtype" jdbcType="INTEGER" property="logtype" />
+    <result column="losttype" jdbcType="INTEGER" property="losttype" />
+    <result column="avatarurl" jdbcType="VARCHAR" property="avatarurl" />
+    <result column="note" jdbcType="VARCHAR" property="note" />
+    <result column="contact" jdbcType="VARCHAR" property="contact" />
+    <result column="mobile" jdbcType="VARCHAR" property="mobile" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, logname, birthplace, age, losttime, logtype, losttype, avatarurl, note, contact, 
+    mobile, status, user_id, create_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_xunqin
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from sys_xunqin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xjxy.model.Xunqin">
+    <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into sys_xunqin (id, logname, birthplace, 
+      age, losttime, logtype, 
+      losttype, avatarurl, note, 
+      contact, mobile, status, 
+      user_id, create_time)
+    values (#{id,jdbcType=INTEGER}, #{logname,jdbcType=VARCHAR}, #{birthplace,jdbcType=VARCHAR}, 
+      #{age,jdbcType=INTEGER}, #{losttime,jdbcType=TIMESTAMP}, #{logtype,jdbcType=INTEGER}, 
+      #{losttype,jdbcType=INTEGER}, #{avatarurl,jdbcType=VARCHAR}, #{note,jdbcType=VARCHAR}, 
+      #{contact,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{userId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xjxy.model.Xunqin">
+    
+    insert into sys_xunqin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+     
+      <if test="logname != null">
+        logname,
+      </if>
+      <if test="birthplace != null">
+        birthplace,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="losttime != null">
+        losttime,
+      </if>
+      <if test="logtype != null">
+        logtype,
+      </if>
+      <if test="losttype != null">
+        losttype,
+      </if>
+      <if test="avatarurl != null">
+        avatarurl,
+      </if>
+      <if test="note != null">
+        note,
+      </if>
+      <if test="contact != null">
+        contact,
+      </if>
+      <if test="mobile != null">
+        mobile,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      
+      <if test="logname != null">
+        #{logname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthplace != null">
+        #{birthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="losttime != null">
+        #{losttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logtype != null">
+        #{logtype,jdbcType=INTEGER},
+      </if>
+      <if test="losttype != null">
+        #{losttype,jdbcType=INTEGER},
+      </if>
+      <if test="avatarurl != null">
+        #{avatarurl,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xjxy.model.Xunqin">
+    update sys_xunqin
+    <set>
+      <if test="logname != null">
+        logname = #{logname,jdbcType=VARCHAR},
+      </if>
+      <if test="birthplace != null">
+        birthplace = #{birthplace,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="losttime != null">
+        losttime = #{losttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="logtype != null">
+        logtype = #{logtype,jdbcType=INTEGER},
+      </if>
+      <if test="losttype != null">
+        losttype = #{losttype,jdbcType=INTEGER},
+      </if>
+      <if test="avatarurl != null">
+        avatarurl = #{avatarurl,jdbcType=VARCHAR},
+      </if>
+      <if test="note != null">
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="contact != null">
+        contact = #{contact,jdbcType=VARCHAR},
+      </if>
+      <if test="mobile != null">
+        mobile = #{mobile,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xjxy.model.Xunqin">
+    update sys_xunqin
+    set logname = #{logname,jdbcType=VARCHAR},
+      birthplace = #{birthplace,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      losttime = #{losttime,jdbcType=TIMESTAMP},
+      logtype = #{logtype,jdbcType=INTEGER},
+      losttype = #{losttype,jdbcType=INTEGER},
+      avatarurl = #{avatarurl,jdbcType=VARCHAR},
+      note = #{note,jdbcType=VARCHAR},
+      contact = #{contact,jdbcType=VARCHAR},
+      mobile = #{mobile,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      user_id = #{userId,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectList" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <![CDATA[ ${value} ]]>
+  </select>
+  <select id="selectXunqin" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <![CDATA[ ${value} ]]>
+  </select>
+</mapper>

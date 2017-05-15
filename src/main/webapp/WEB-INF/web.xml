@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+ 
+ 	<!-- 设置session过期时间，默认为30分钟.设置为0代表永远不过期 -->
+	<session-config>
+      <session-timeout>300</session-timeout>
+	</session-config>
+ <!-- 欢迎主页 -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 主页Action -->
+  <servlet>
+     <servlet-name>indexController</servlet-name>
+     <servlet-class>com.xjxy.web.IndexController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>indexController</servlet-name>
+     <url-pattern>/index</url-pattern>
+  </servlet-mapping>
+  <!-- 用户Action -->
+  <servlet>
+     <servlet-name>userController</servlet-name>
+     <servlet-class>com.xjxy.web.UserController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>userController</servlet-name>
+     <url-pattern>/user</url-pattern>
+  </servlet-mapping>
+  <!-- 新闻Action -->
+  <servlet>
+     <servlet-name>newsController</servlet-name>
+     <servlet-class>com.xjxy.web.NewsController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>newsController</servlet-name>
+     <url-pattern>/news</url-pattern>
+  </servlet-mapping>  
+  <!-- 寻亲Action -->
+  <servlet>
+     <servlet-name>xunqinController</servlet-name>
+     <servlet-class>com.xjxy.web.XunqinController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>xunqinController</servlet-name>
+     <url-pattern>/xunqin</url-pattern>
+  </servlet-mapping>  
+  <!-- 评论Action -->
+  <servlet>
+     <servlet-name>commentController</servlet-name>
+     <servlet-class>com.xjxy.web.CommentController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>commentController</servlet-name>
+     <url-pattern>/comment</url-pattern>
+  </servlet-mapping>
+  <!-- 公告Action  -->
+  <servlet>
+     <servlet-name>announceController</servlet-name>
+     <servlet-class>com.xjxy.web.AnnounceController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>announceController</servlet-name>
+     <url-pattern>/announce</url-pattern>
+  </servlet-mapping>
+  <!-- 解决方案Action -->
+  <servlet>
+     <servlet-name>solutionController</servlet-name>
+     <servlet-class>com.xjxy.web.SolutionController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>solutionController</servlet-name>
+     <url-pattern>/solution</url-pattern>
+  </servlet-mapping>
+  <!-- 留言板 -->
+  <servlet>
+     <servlet-name>messageController</servlet-name>
+     <servlet-class>com.xjxy.web.MessageBoardController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>messageController</servlet-name>
+     <url-pattern>/message</url-pattern>
+  </servlet-mapping>
+  <!-- 网站链接 -->
+  <servlet>
+     <servlet-name>linkController</servlet-name>
+     <servlet-class>com.xjxy.web.LinkController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>linkController</servlet-name>
+     <url-pattern>/link</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ############################后台Servlet部分################################# -->
+    <servlet>
+     <servlet-name>adminController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminController</servlet-name>
+	     <url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+  <!-- 后台用户Action -->
+  <servlet>
+     <servlet-name>adminUserController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminUserController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminUserController</servlet-name>
+	     <url-pattern>/admin/user</url-pattern>
+	</servlet-mapping>
+	<!-- 后台公告Action -->
+	<servlet>
+     <servlet-name>adminAnnounceController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminAnnounceController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminAnnounceController</servlet-name>
+	     <url-pattern>/admin/announce</url-pattern>
+	</servlet-mapping>
+	<!-- 后台寻网站链接Action -->
+	<servlet>
+     <servlet-name>adminLinkController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminLinkController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminLinkController</servlet-name>
+	     <url-pattern>/admin/link</url-pattern>
+	</servlet-mapping>
+	<!-- 后台寻子寻亲Action -->
+	<servlet>
+     <servlet-name>adminXunqinController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminXunqinController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminXunqinController</servlet-name>
+	     <url-pattern>/admin/xunqin</url-pattern>
+	</servlet-mapping>
+	<!-- 后台解决方案Action -->
+  	<servlet>
+     <servlet-name>adminSolutionController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminSolutionController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminSolutionController</servlet-name>
+	     <url-pattern>/admin/solution</url-pattern>
+	</servlet-mapping>
+	<!-- 后台新闻Action -->
+  	<servlet>
+     <servlet-name>adminNewsController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminNewsController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminNewsController</servlet-name>
+	     <url-pattern>/admin/news</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 后台留言板Action -->
+  	<servlet>
+     <servlet-name>adminMessageBoardController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminMessageBoardController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminMessageBoardController</servlet-name>
+	     <url-pattern>/admin/message</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 后台评论Action -->
+  	<servlet>
+     <servlet-name>adminCommentController</servlet-name>
+     <servlet-class>com.xjxy.web.back.AdminCommentController</servlet-class>
+	</servlet>
+	  <servlet-mapping>
+	     <servlet-name>adminCommentController</servlet-name>
+	     <url-pattern>/admin/comment</url-pattern>
+	</servlet-mapping>
+    <!-- ############################后台过滤器区域################################# -->
+  <!-- 编码过滤器 -->
+  <filter>
+      <filter-name>encodingFilter</filter-name>
+      <filter-class>filter.EncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>encodingFilter</filter-name>
+  		<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 检测登录过滤器 -->
+    <filter>
+      <filter-name>checkFilter</filter-name>
+      <filter-class>filter.CheckFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>checkFilter</filter-name>
+  		<url-pattern>/xunqin/*</url-pattern>
+  </filter-mapping>
+   <!-- 检测Admin登录过滤器-->
+    <filter>
+      <filter-name>checkAdminFilter</filter-name>
+      <filter-class>filter.CheckAdminFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>checkAdminFilter</filter-name>
+  		<url-pattern>/admin/*</url-pattern>
+  </filter-mapping>
+   
+</web-app>
